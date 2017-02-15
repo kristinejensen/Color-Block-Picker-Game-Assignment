@@ -1,0 +1,29 @@
+#redBlock {
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  display: inline-block;
+}
+#greenBlock {
+  height: 100px;
+  width: 100px;
+  background-color: green;
+  display: inline-block;
+}
+#yellowBlock {
+  height: 100px;
+  width: 100px;
+  background-color: yellow;
+  display: inline-block;
+}
+#blueBlock {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  display: inline-block;
+}
+#pickAColorPrompt {
+  display: block;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
