@@ -1,5 +1,5 @@
 $(document).ready(function(){ // waits for document to load
-  $('#pickAColorPrompt').text('Hey, pick the' + + 'random color!'); // prompts the user to pick a color
+  $('#pickAColorPrompt').text('Hey, pick the' + ' ' + 'random color!'); // prompts the user to pick a color
   $('#colorBlocks').append( // displays color blocks on DOM
     '<div>' + $('#redBlock') + '</div>' +
     '<div>'+ $('#greenBlock') + '</div>' +
@@ -18,6 +18,17 @@ $(document).ready(function(){ // waits for document to load
 
     // creates array of objects, which hold color block values
     var colorBlockArray = [redBlock.data(), greenBlock.data(), yellowBlock.data(), blueBlock.data()];
+
+    var redBlockPrompt = redBlock.data();
+    var greenBlockPrompt = greenBlock.data();
+    var yellowBlockPrompt = yellowBlock.data();
+    var blueBlockPrompt = blueBlock.data();
+
+      console.log(blueBlockPrompt);
+
+    var userInstructionArray = []
+
+
 
     // logs out the color block value at array index 0 - used for testing
     // console.log(colorBlockArray[0].value);
