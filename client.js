@@ -6,20 +6,30 @@ $(document).ready(function(){ // waits for document to loaded
     '<div>' + $('#yellowBlock') + '</div>' +
     '<div>' + $('#blueBlock') + '</div>');
 
-    var redBlock = $('#redBlock')
+    var redBlock = $('#redBlock') // Sets color block variables to span ids
     var greenBlock = $('#greenBlock')
     var yellowBlock = $('#yellowBlock')
     var blueBlock = $('#blueBlock')
 
-    redBlock.data('value', 1);
+    redBlock.data('value', 1); // Adds data values to color block variables
     greenBlock.data('value', 2);
     yellowBlock.data('value', 3);
     blueBlock.data('value', 4);
 
-    $('.button').on('click', function(){
-      console.log('i clicked a button');
+    // creates array of objects, which hold color block values
+    var colorBlockArray = [redBlock.data(), greenBlock.data(), yellowBlock.data(), blueBlock.data()];
 
-
-    });
+    // logs out the color block value at array index 0 - used for testing
+    // console.log(colorBlockArray[0].value);
 
   });
+
+//     $('.button').on('click', function(){
+//
+//       randomNumber(1, 4);
+//
+//
+//
+//       function randomNumber(min, max){
+//         return Math.floor(Math.random() * (1 + max - min) + min);
+// }
