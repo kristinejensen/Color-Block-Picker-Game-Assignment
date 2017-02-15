@@ -1,5 +1,5 @@
 $(document).ready(function(){ // waits for document to load
-  $('#pickAColorPrompt').text('Hey, pick the' + ' ' + 'random color!'); // prompts the user to pick a color
+
   $('#colorBlocks').append( // displays color blocks on DOM
     '<div>' + $('#redBlock') + '</div>' +
     '<div>'+ $('#greenBlock') + '</div>' +
@@ -24,22 +24,36 @@ $(document).ready(function(){ // waits for document to load
     var yellowBlockPrompt = yellowBlock.data();
     var blueBlockPrompt = blueBlock.data();
 
-      console.log(blueBlockPrompt);
+    var userInstructionArray = [redBlockPrompt, greenBlockPrompt, yellowBlockPrompt, blueBlockPrompt];
 
-    var userInstructionArray = []
+    var randomNumberSelected = randomNumber(1, 4);
 
-
-
-    // logs out the color block value at array index 0 - used for testing
-    // console.log(colorBlockArray[0].value);
-
-      var randomNumberSelected = randomNumber(1, 4);
+    if (randomNumberSelected == userInstructionArray[0].value) {
+      $('#pickAColorPrompt').text('Hey, pick the red block!');
+    }else if (randomNumberSelected == userInstructionArray[1].value) {
+      $('#pickAColorPrompt').text('Hey, pick the green block!');
+    }else if (randomNumberSelected == userInstructionArray[2].value) {
+      $('#pickAColorPrompt').text('Hey, pick the yellow block!');
+    }else{
+      $('#pickAColorPrompt').text('Hey, pick the blue block!')
+    }
 
     $('.button').on('click', function(){ // event listener for color block click
       //this will be used to call the function when the color block is clicked
 
       if ($(this).data().value == randomNumberSelected){ // conditional statement to check if random number is equal to color block selected
-        $('#pickAColorPrompt').text("Yay! Pick another random color!");
+        $('#pickAColorPrompt').text("Yay! Pick another random color! ");
+        randomNumberSelected = randomNumber(1, 4);
+
+        if (randomNumberSelected == userInstructionArray[0].value) {
+          $('#pickAColorPrompt').append('Now, pick the red block!');
+        }else if (randomNumberSelected == userInstructionArray[1].value) {
+          $('#pickAColorPrompt').append('Now, pick the green block!');
+        }else if (randomNumberSelected == userInstructionArray[2].value) {
+          $('#pickAColorPrompt').append('Now, pick the yellow block!');
+        }else{
+          $('#pickAColorPrompt').append('Now, pick the blue block!')
+        }
       }else{ ($('#pickAColorPrompt').text("Nope!"))
     }
   });
