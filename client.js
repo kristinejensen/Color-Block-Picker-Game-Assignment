@@ -1,5 +1,5 @@
 $(document).ready(function(){ // waits for document to load
-  $('#pickAColorPrompt').text("Hey, pick a random color!"); // prompts the user to pick a color
+  $('#pickAColorPrompt').text('Hey, pick the' + + 'random color!'); // prompts the user to pick a color
   $('#colorBlocks').append( // displays color blocks on DOM
     '<div>' + $('#redBlock') + '</div>' +
     '<div>'+ $('#greenBlock') + '</div>' +
@@ -22,16 +22,17 @@ $(document).ready(function(){ // waits for document to load
     // logs out the color block value at array index 0 - used for testing
     // console.log(colorBlockArray[0].value);
 
+      var randomNumberSelected = randomNumber(1, 4);
+
     $('.button').on('click', function(){ // event listener for color block click
-      randomNumber(1, 4);  //this will be used to call the function when the color block is clicked
+      //this will be used to call the function when the color block is clicked
 
-      function randomNumber(min, max){
-        return Math.floor(Math.random() * (1 + max - min) + min);
-      }
-
-      if (colorBlockArray[0].value == randomNumber(1, 4)){ // conditional statement to check if random number is equal to color block selected
+      if ($(this).data().value == randomNumberSelected){ // conditional statement to check if random number is equal to color block selected
         $('#pickAColorPrompt').text("Yay! Pick another random color!");
       }else{ ($('#pickAColorPrompt').text("Nope!"))
     }
   });
+  function randomNumber(min, max){
+    return Math.floor(Math.random() * (1 + max - min) + min);
+  }
 });
