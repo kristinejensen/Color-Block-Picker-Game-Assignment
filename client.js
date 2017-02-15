@@ -22,17 +22,16 @@ $(document).ready(function(){ // waits for document to load
     // logs out the color block value at array index 0 - used for testing
     // console.log(colorBlockArray[0].value);
 
-  $('.button').on('click', function(){ // event listener for color block click
-    randomNumber(1, 4);  //this will be used to call the function when the color block is clicked
+    $('.button').on('click', function(){ // event listener for color block click
+      randomNumber(1, 4);  //this will be used to call the function when the color block is clicked
 
-    function randomNumber(min, max){
-      return Math.floor(Math.random() * (1 + max - min) + min);
+      function randomNumber(min, max){
+        return Math.floor(Math.random() * (1 + max - min) + min);
+      }
+
+      if (colorBlockArray[0].value == randomNumber(1, 4)){ // conditional statement to check if random number is equal to color block selected
+        $('#pickAColorPrompt').text("Yay! Pick another random color!");
+      }else{ ($('#pickAColorPrompt').text("Nope!"))
     }
   });
 });
-
-// colorBlockArry[i].value; --> not sure if I'll need this, but I think I do.
-
-// for (var i = 0; i < colorBlockArray.length; i++) {
-//   array[i]
-// }
